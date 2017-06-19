@@ -1,4 +1,4 @@
-package com.example.shen.splashdemo;
+package com.shen.splashdemo;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.example.shen.splashdemo", appContext.getPackageName());
+        assertEquals("com.shen.splashdemo", appContext.getPackageName());
     }
 }

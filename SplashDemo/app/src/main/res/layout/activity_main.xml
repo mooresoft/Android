@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.shen.splashdemo.MainActivity">
+    tools:context="com.shen.splashdemo.MainActivity">
 
     <FrameLayout
         android:id="@+id/content"

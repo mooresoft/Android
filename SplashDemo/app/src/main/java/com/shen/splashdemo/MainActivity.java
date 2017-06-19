@@ -1,4 +1,4 @@
-package com.example.shen.splashdemo;
+package com.shen.splashdemo;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;

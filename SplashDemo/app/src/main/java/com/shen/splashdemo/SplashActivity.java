@@ -15,7 +15,7 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+
 
         SharedPreferences settings = getSharedPreferences(SHARE_APP_TAG, 0);
         Boolean user_first = settings.getBoolean("FIRST", true);
@@ -23,22 +23,22 @@ public class SplashActivity extends AppCompatActivity {
         {
             settings.edit().putBoolean("FIRST", false).commit();
             Toast.makeText(SplashActivity.this, "第一次", Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(this, GuideActivity.class);
+            startActivity(intent);
+            finish();
         }
         else
         {
+            setContentView(R.layout.activity_splash);
             Toast.makeText(SplashActivity.this, "不是第一次", Toast.LENGTH_LONG).show();
+            // 使用Handler的postDelayed方法，3秒后执行跳转到MainActivity
+            new Handler().postDelayed(new Runnable() {
+                public void run() {
+                    Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                    SplashActivity.this.startActivity(intent);
+                    SplashActivity.this.finish();
+                }
+            }, SPLASH_DELAY_MILLIS);
         }
-        // 使用Handler的postDelayed方法，3秒后执行跳转到MainActivity
-        new Handler().postDelayed(new Runnable() {
-            public void run() {
-                goMainActivity();
-            }
-        }, SPLASH_DELAY_MILLIS);
-    }
-
-    private void goMainActivity() {
-        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-        SplashActivity.this.startActivity(intent);
-        SplashActivity.this.finish();
     }
 }

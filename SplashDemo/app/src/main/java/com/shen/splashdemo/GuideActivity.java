@@ -51,7 +51,7 @@ public class GuideActivity extends AppCompatActivity implements OnPageChangeList
         @Override
         protected void onCreate(Bundle savedInstanceState) {
                 super.onCreate(savedInstanceState);
-                setContentView(R.layout.guide_layout);
+                setContentView(R.layout.activity_guide);
 
                 // 初始化页面
                 initViews();
@@ -61,15 +61,6 @@ public class GuideActivity extends AppCompatActivity implements OnPageChangeList
         }
 
         private void initViews() {
-
-                SharedPreferences pref = getSharedPreferences("first",Activity.MODE_PRIVATE);
-                isFirst = pref.getBoolean("status",true);
-
-                if(!isFirst){
-                        Intent intent = new Intent(this,MainActivity.class);
-                        startActivity(intent);
-                        finish();
-                }
 
                 LayoutInflater inflater = LayoutInflater.from(this);
                 RelativeLayout guideFour = (RelativeLayout) inflater.inflate(R.layout.guide_four, null);
